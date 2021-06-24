@@ -21,4 +21,4 @@ result[2]=$compute3
 result[3]=$compute4
 
 echo "Storing result in dictionary: ${!result[@]}"
-
+echo "The result in Dictionary: ${result[@]}"
