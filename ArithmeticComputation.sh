@@ -20,5 +20,18 @@ result[1]=$compute2
 result[2]=$compute3
 result[3]=$compute4
 
-echo "Storing result in dictionary: ${!result[@]}"
-echo "The result in Dictionary: ${result[@]}"
+echo "Before sorting result is: ${result[@]}"
+for (( i=0;i<4;i++ ))
+do
+	for (( int j=j+1;j<4;j++ ))
+	do
+		if [[ ${result[i]} -lt ${result[$((j))]} ]]
+		then
+			temp=${result[i]}
+			result[$i]=${result[$((j))]}
+			result[$((j))]=$temp
+		fi
+	done
+done
+
+echo "After sorting result in Dictionary in desc order: ${result[@]}"
