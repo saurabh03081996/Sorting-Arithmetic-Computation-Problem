@@ -1,4 +1,4 @@
-#! /bin/bash -x
+#! /bin/bash 
 
 echo "Welcome to Arithmetic computation and sorting"
 read -p "Enter three number a,b,c: " a b c
@@ -23,7 +23,7 @@ result[3]=$compute4
 echo "Before sorting result is: ${result[@]}"
 for (( i=0;i<4;i++ ))
 do
-	for (( int j=j+1;j<4;j++ ))
+	for (( j=i+1;j<4;j++ ))
 	do
 		if [[ ${result[i]} -lt ${result[$((j))]} ]]
 		then
@@ -35,3 +35,20 @@ do
 done
 
 echo "After sorting result in Dictionary in desc order: ${result[@]}"
+
+for (( i=0;i<4;i++ ))
+do
+        for (( j=i+1;j<4;j++ ))
+        do
+                if [[ ${result[i]} -gt ${result[$((j))]} ]]
+                then
+                        temp=${result[i]}
+                        result[$i]=${result[$((j))]}
+                        result[$((j))]=$temp
+                fi
+        done
+done
+
+echo "After sorting result in Dictionary in asc order: ${result[@]}"
+
+
