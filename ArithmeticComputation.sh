@@ -14,3 +14,11 @@ echo $compute3
 
 compute4=$(($a%$b+$c))
 echo $compute4
+
+result[0]=$compute1
+result[1]=$compute2
+result[2]=$compute3
+result[3]=$compute4
+
+echo "Storing result in dictionary: ${!result[@]}"
+
